@@ -46,7 +46,7 @@
                 "name": "[parameters('webAppName')]",
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('hositngPlanName'))]",
                 "siteConfig": {
-                    "linuxFxVersion": "NODE|lts"
+                    "linuxFxVersion": "NODE|12.9"
                 }
             }
         },
