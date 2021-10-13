@@ -32,8 +32,22 @@
         "sku-Code": {
             "type": "string",
             "defaultValue": "F1",
+            "allowedValues": [
+                "F1",
+                "D1",
+                "B1",
+                "B2",
+                "B3",
+                "S1",
+                "S2",
+                "S3",
+                "P1",
+                "P2",
+                "P3",
+                "P4"
+            ],
             "metadata": {
-                "description": "The type of the hosting plan."
+                "description": "The pricing tier for hosting plan."
             }
         },
         "linuxFxVersion": {

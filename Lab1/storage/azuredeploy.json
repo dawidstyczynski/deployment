@@ -6,6 +6,7 @@
             "type":"string",
             "defaultValue":"[concat('store',uniqueString(resourceGroup().name))]",
             "minLength":3,
+            "maxLength":24,
             "metadata":{
                 "description":"Storage name."
             }
