@@ -2,8 +2,17 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "gitStorageUri": {
-            "type": "string"
+        "storageUri": {
+            "type": "string",
+            "metadata":{
+                "description" :"hello world"
+            }
+        },
+        "webAppUri": {
+            "type": "string",
+            "metadata": {
+                "description": "description"
+            }
         },
         "storageDeploymentName": {
             "type": "string",
@@ -22,11 +31,11 @@
         "properties": {
             "mode": "Incremental",
             "templateLink": {
-                "uri": "[concat(parameters('gitStorageUri'),'.json')]",
+                "uri": "[concat(parameters('storageUri'),'/azuredeploy.json')]",
                 "contentVersion": "1.0.0.0"
             },
             "parametersLink": {
-                "uri": "[concat(parameters('gitStorageUri'),'.parameters.json')]"
+                "uri": "[concat(parameters('storageUri'),'/azuredeploy.parameters.json')]"
             }
         }
     },
@@ -37,11 +46,11 @@
         "properties": {
             "mode": "Incremental",
             "templateLink": {
-                "uri": "[concat('https://raw.githubusercontent.com/dawidstyczynski/deployment/master/Lab1/web-app/azuredeploy','.json')]",
+                "uri": "[concat(parameters('webAppUri'),'/azuredeploy.json')]",
                 "contentVersion": "1.0.0.0"
             },
             "parametersLink": {
-                "uri": "[concat('https://raw.githubusercontent.com/dawidstyczynski/deployment/master/Lab1/web-app/azuredeploy','.parameters.json')]"
+                "uri": "[concat(parameters('webAppUri'),'/azuredeploy.parameters.json')]"
             }
         }
     }

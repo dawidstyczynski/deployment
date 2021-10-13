@@ -2,8 +2,11 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "gitStorageUri": {
-            "value": "https://raw.githubusercontent.com/dawidstyczynski/deployment/master/Lab1/storage/azuredeploy"
+        "storageUri": {
+            "value": "https://raw.githubusercontent.com/dawidstyczynski/deployment/master/Lab1/storage"
+        },
+        "webAppUri": {
+            "value": "https://raw.githubusercontent.com/dawidstyczynski/deployment/master/Lab1/web-app"
         },
         "storageDeploymentName": {
             "value": "Lab1StorageDeployment"
