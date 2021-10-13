@@ -19,7 +19,7 @@
         "type": "Microsoft.Resources/deployments",
         "apiVersion": "2021-04-01",
         "properties": {
-            "mode": "Incremental",
+            "mode": "Incrementaal",
             "templateLink": {
                 "uri": "[concat(variables('storageDeploymentFileName'),'.json')]"
             },
