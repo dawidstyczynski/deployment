@@ -57,8 +57,7 @@
             "location": "[parameters('location')]",
             "kind":"linux",
             "sku": {
-                "name": "[parameters('sku-Code')]",
-                "capacity": 1
+                "name": "[parameters('sku-Code')]"
             },
             "properties": {
                 "reserved": true
