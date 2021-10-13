@@ -4,7 +4,7 @@
     "parameters": {
         "webAppName": {
             "type": "string",
-            "defaultValue": "[concat('Node-',uniqueString(resourceGroup().name))]",
+            "defaultValue": "[concat('Node-',resourceGroup().name)]",
             "metadata": {
                 "description": "The name of the web app."
             }
@@ -29,6 +29,13 @@
             "metadata": {
                 "description": "description"
             }
+        },
+        "linuxFxVersion": {
+            "type": "string",
+            "defaultValue":"NODE|lts",
+            "metadata": {
+                "description": "The type of webapp"
+            }
         }
     },
     "functions": [],
@@ -46,7 +53,7 @@
                 "name": "[parameters('webAppName')]",
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('hositngPlanName'))]",
                 "siteConfig": {
-                    "linuxFxVersion": "NODE|lts"
+                    "linuxFxVersion": "[parameters('linuxFxVersion')]"
                 }
             }
         },
@@ -55,7 +62,7 @@
             "name": "[parameters('hositngPlanName')]",
             "type": "Microsoft.Web/serverfarms",
             "location": "[parameters('location')]",
-            "kind":"linux",
+            "kind":"Linux",
             "sku": {
                 "name": "[parameters('sku-Code')]"
             },
