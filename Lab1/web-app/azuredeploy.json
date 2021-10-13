@@ -2,13 +2,6 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "webAppName": {
-            "type": "string",
-            "defaultValue": "[concat('Node-',resourceGroup().name)]",
-            "metadata": {
-                "description": "The name of the web app."
-            }
-        },
         "location": {
             "type": "string",
             "defaultValue": "[resourceGroup().location]",
@@ -16,25 +9,39 @@
                 "description": "Location for all resources."
             }
         },
+        "webAppName": {
+            "type": "string",
+            "defaultValue": "[concat('Node-',resourceGroup().name)]",
+            "metadata": {
+                "description": "The name of the web app."
+            }
+        },
         "hositngPlanName": {
             "type": "string",
-            "defaultValue" :"[concat('hpn-', resourceGroup().name)]",
+            "defaultValue" :"[concat('Hpn-', resourceGroup().name)]",
             "metadata": {
-                "description": "description"
+                "description": "The name of the hosting plan."
             }
         },
         "sku-Code": {
             "type": "string",
             "defaultValue": "F1",
             "metadata": {
-                "description": "description"
+                "description": "The type of the hosting plan."
             }
         },
         "linuxFxVersion": {
             "type": "string",
             "defaultValue":"NODE|lts",
             "metadata": {
-                "description": "The type of webapp"
+                "description": "The version of linux FX."
+            }
+        },
+        "serverFarmType": {
+            "type": "string",
+            "defaultValue":"Linux",
+            "metadata": {
+                "description": "The type of server farm."
             }
         }
     },
@@ -62,7 +69,7 @@
             "name": "[parameters('hositngPlanName')]",
             "type": "Microsoft.Web/serverfarms",
             "location": "[parameters('location')]",
-            "kind":"Linux",
+            "kind":"[parameters('serverFarmType')]",
             "sku": {
                 "name": "[parameters('sku-Code')]"
             },
