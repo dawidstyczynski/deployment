@@ -1,4 +1,4 @@
-$rg = 'lab1-Exercise-02'
+$rg = 'lab1'
 $loc = "northeurope"
 $today = Get-Date -Format "dd-MM-yyyy"
 $deploymentName = "Deployment_" + "$today"
