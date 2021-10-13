@@ -6,7 +6,7 @@
             "value": "https://github.com/dawidstyczynski/deployment/blob/master/Lab1/"
         },
         "storageDeploymentFilesPath": {
-            "value": "storage/azuredeploy_storage" 
+            "value": "storage/azuredeploy" 
         }
     }
 }
