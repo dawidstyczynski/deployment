@@ -5,19 +5,25 @@
         "location": {
             "type": "string",
             "defaultValue": "[resourceGroup().location]",
+            
             "metadata": {
                 "description": "Location for all resources."
             }
         },
         "webAppName": {
             "type": "string",
+            
             "defaultValue": "[concat('Node-',resourceGroup().name)]",
+            "minLength":3,
+            "maxLength":24,
             "metadata": {
                 "description": "The name of the web app."
             }
         },
         "hositngPlanName": {
             "type": "string",
+            "minLength":3,
+            "maxLength":24,
             "defaultValue" :"[concat('Hpn-', resourceGroup().name)]",
             "metadata": {
                 "description": "The name of the hosting plan."
