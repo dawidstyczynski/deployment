@@ -1,6 +1,5 @@
 $rg = 'lab1-Exercise-01'
 $loc = "northeurope"
-$today = Get-Date -Format "dd-MM-yyyy"
 $deploymentName = "Main_Deployment"
 $fileName = "azuredeploy"
 

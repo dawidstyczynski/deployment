@@ -10,6 +10,9 @@
         },
         "storageDeploymentName": {
             "value": "Lab1StorageDeployment"
+        },
+        "webappDeploymentName": {
+            "value": "Lab1WebAppDeployment"
         }
     }
 }

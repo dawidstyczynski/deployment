@@ -5,19 +5,25 @@
         "storageUri": {
             "type": "string",
             "metadata":{
-                "description" :"hello world"
+                "description" :"The URI to storage template  folder."
             }
         },
         "webAppUri": {
             "type": "string",
             "metadata": {
-                "description": "description"
+                "description": "The URI to webapp template  folder."
             }
         },
         "storageDeploymentName": {
             "type": "string",
             "metadata": {
-                "description": "The storage deployment name"
+                "description": "The storage deployment name."
+            }
+        },
+        "webappDeploymentName": {
+            "type": "string",
+            "metadata": {
+                "description": "The webapp deployment name."
             }
         }
     },
@@ -40,7 +46,7 @@
         }
     },
     {
-        "name": "webappDeploymentKekw213",
+        "name": "[parameters('webappDeploymentName')]",
         "type": "Microsoft.Resources/deployments",
         "apiVersion": "2021-04-01",
         "properties": {
