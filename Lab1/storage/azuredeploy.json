@@ -4,7 +4,7 @@
     "parameters": {        
         "storageName": {
             "type":"string",
-            "defaultValue":"[concat('StorageAccount-',resourceGroup().name)]",
+            "defaultValue":"[concat('Storage-',resourceGroup().name)]",
             "minLength":3,
             "maxLength":24,
             "metadata":{
