@@ -2,29 +2,25 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "gitUri": {
-            "type": "string"
-        },
-        "storageDeploymentFilesPath": {
+        "gitStorageUri": {
             "type": "string"
         }
     },
     "functions": [],
-    "variables": {
-        "storageDeploymentFileName": "[concat(parameters('gitUri'),parameters('storageDeploymentFilesPath'))]"
-    },
+    "variables": {},
     "resources": [
     {
-        "name": "linkedDeployment1",
+        "name": "myDeploymentKekwLab1",
         "type": "Microsoft.Resources/deployments",
         "apiVersion": "2021-04-01",
         "properties": {
             "mode": "Incremental",
             "templateLink": {
-                "uri": "[concat(variables('storageDeploymentFileName'),'.json')]"
+                "uri": "[concat(parameters('gitStorageUri'),'.json')]",
+                "contentVersion": "1.0.0.0"
             },
             "parametersLink": {
-                "uri": "[concat(variables('storageDeploymentFileName'),'.parameters.json')]"
+                "uri": "[concat(parameters('gitStorageUri'),'.parameters.json')]"
             }
         }
     }

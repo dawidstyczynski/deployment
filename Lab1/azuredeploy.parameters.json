@@ -2,11 +2,8 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "gitUri": {
-            "value": "https://github.com/dawidstyczynski/deployment/blob/master/Lab1/"
-        },
-        "storageDeploymentFilesPath": {
-            "value": "storage/azuredeploy" 
+        "gitStorageUri": {
+            "value": "https://raw.githubusercontent.com/dawidstyczynski/deployment/master/Lab1/storage/azuredeploy"
         }
     }
 }
