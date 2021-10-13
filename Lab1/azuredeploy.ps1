@@ -1,7 +1,7 @@
-$rg = 'lab1-Exercise-01'
+$rg = 'lab1-Exercise-02'
 $loc = "northeurope"
 $today = Get-Date -Format "dd-MM-yyyy"
-$deploymentName = "Deployment_" + "$today"
+$deploymentName = "Deployment"
 $fileName = "azuredeploy"
 
 New-AzResourceGroup -Name $rg -Location $loc -Force

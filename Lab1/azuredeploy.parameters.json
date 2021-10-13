@@ -4,6 +4,9 @@
     "parameters": {
         "gitStorageUri": {
             "value": "https://raw.githubusercontent.com/dawidstyczynski/deployment/master/Lab1/storage/azuredeploy"
+        },
+        "storageDeploymentName": {
+            "value": "Lab1StorageDeployment"
         }
     }
 }

@@ -4,13 +4,19 @@
     "parameters": {
         "gitStorageUri": {
             "type": "string"
+        },
+        "storageDeploymentName": {
+            "type": "string",
+            "metadata": {
+                "description": "The storage deployment name"
+            }
         }
     },
     "functions": [],
     "variables": {},
     "resources": [
     {
-        "name": "myDeploymentKekwLab1",
+        "name": "[parameters('storageDeploymentName')]",
         "type": "Microsoft.Resources/deployments",
         "apiVersion": "2021-04-01",
         "properties": {
