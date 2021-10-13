@@ -29,6 +29,21 @@
                 "uri": "[concat(parameters('gitStorageUri'),'.parameters.json')]"
             }
         }
+    },
+    {
+        "name": "webappDeploymentKekw213",
+        "type": "Microsoft.Resources/deployments",
+        "apiVersion": "2021-04-01",
+        "properties": {
+            "mode": "Incremental",
+            "templateLink": {
+                "uri": "[concat('https://raw.githubusercontent.com/dawidstyczynski/deployment/master/Lab1/web-app/azuredeploy','.json')]",
+                "contentVersion": "1.0.0.0"
+            },
+            "parametersLink": {
+                "uri": "[concat('https://raw.githubusercontent.com/dawidstyczynski/deployment/master/Lab1/web-app/azuredeploy','.parameters.json')]"
+            }
+        }
     }
     ],
     "outputs": {}
