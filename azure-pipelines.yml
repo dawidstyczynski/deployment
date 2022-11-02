@@ -17,5 +17,6 @@ steps:
 
 - script: |
     cd ./Lab2/myapp
-    ls -a
+    npm install
+    npm run start
   displayName: 'npm install and build'
