@@ -8,7 +8,9 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
-
+defaults:
+  run:
+    working-directory: client # The working directory path
 steps:
 - task: NodeTool@0
   inputs:
