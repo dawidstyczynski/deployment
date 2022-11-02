@@ -10,13 +10,10 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: NodeTool@0
+- task: AzureRmWebAppDeployment@4
   inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
-
-- script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
-  workingDirectory: './Lab2'
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure für Bildungseinrichtungen: Starter(2f2ad24f-3f17-4813-8754-ec55467a51e5)'
+    appType: 'webApp'
+    WebAppName: 
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
