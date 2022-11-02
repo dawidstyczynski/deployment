@@ -16,5 +16,5 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    echo $(System.DefaultWorkingDirectory)
+    ls -a
   displayName: 'echo'
