@@ -11,11 +11,11 @@ pool:
 
 steps:
   - task: CopyFiles@2
-    displayName: 'Copy Files to: $(build.artifactstagingdirectory)/Templates'
+    displayName: 'Copy Files to: $(build.artifactstagingdirectory)/lab2'
     inputs:
       SourceFolder: deployment
       Contents: '*.json'
-      TargetFolder: '$(build.artifactstagingdirectory)/Templates'
+      TargetFolder: '$(build.artifactstagingdirectory)/Lab2'
   - task: Npm@1
     displayName: 'npm custom'
     inputs:
