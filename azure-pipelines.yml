@@ -16,10 +16,5 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    cd $(System.DefaultWorkingDirectory)/Lab2
-    npm install
-    npm run build
-  displayName: 'npm install and build'
-- script: |
     echo $(System.DefaultWorkingDirectory)
   displayName: 'echo'
