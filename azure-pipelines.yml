@@ -15,5 +15,5 @@ steps:
     ConnectionType: 'AzureRM'
     azureSubscription: 'Azure für Bildungseinrichtungen: Starter(2f2ad24f-3f17-4813-8754-ec55467a51e5)'
     appType: 'webApp'
-    WebAppName: 
+    WebAppName: 'test'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
