@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 defaults:
   run:
-    working-directory: client # The working directory path
+    working-directory: Lab2
 steps:
 - task: NodeTool@0
   inputs:
