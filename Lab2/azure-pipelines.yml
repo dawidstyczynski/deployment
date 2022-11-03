@@ -46,4 +46,10 @@ stages:
             # Write your commands here
             
             echo 'Hello world'
-      
+      - task: AzureRmWebAppDeployment@4
+        inputs:
+          ConnectionType: 'AzureRM'
+          azureSubscription: 'Azure für Bildungseinrichtungen: Starter(2f2ad24f-3f17-4813-8754-ec55467a51e5)'
+          appType: 'webApp'
+          WebAppName: 'sadnsadjokas'
+          packageForLinux: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
