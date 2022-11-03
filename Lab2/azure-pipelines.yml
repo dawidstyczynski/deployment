@@ -54,7 +54,7 @@ stages:
             displayName: 'Azure Web App Deploy'
             inputs:
               azureSubscription: 'Azure für Bildungseinrichtungen: Starter(2f2ad24f-3f17-4813-8754-ec55467a51e5)'
-              appType: 'webAppLinux'
+              appType: 'webApp'
               appName: 'sadnsadjokas'
               package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
               runtimeStack: 'NODE|14.00'
