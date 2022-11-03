@@ -38,6 +38,8 @@ stages:
   displayName: Deploy stage
   pool:
     vmImage: ubuntu-latest
+  dependsOn: Build
+  condition: succeeded()
   jobs:
     - job: DeployJob
       displayName: Deploy Job
