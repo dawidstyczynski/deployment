@@ -55,7 +55,7 @@ stages:
             inputs:
               azureSubscription: 'Azure für Bildungseinrichtungen: Starter(2f2ad24f-3f17-4813-8754-ec55467a51e5)'
               appType: 'webApp'
-              appName: 'sadnsadjokas'
+              appName: 'Node-lab2'
               package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
               runtimeStack: 'NODE|14.00'
               startUpCommand: 'npm run start'
