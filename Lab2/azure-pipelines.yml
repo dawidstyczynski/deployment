@@ -21,7 +21,7 @@ stages:
           versionSpec: '16.x'
       - script: |
           npm install
-          echo '$(Build.BinariesDirectory)'
+          ls '$(Build.BinariesDirectory)'
           cd ./Lab2/myapp
           npm run build --if-present
           npm run test --if-present
