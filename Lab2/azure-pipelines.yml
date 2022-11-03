@@ -10,13 +10,12 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-
-
-- task: AzureRmWebAppDeployment@4
+- task: NodeTool@0
   inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Azure für Bildungseinrichtungen: Starter(2f2ad24f-3f17-4813-8754-ec55467a51e5)'
-    appType: 'webApp'
-    WebAppName: 'sadnsadjokas'
-    VirtualApplication: 'test'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    versionSource: 'spec'
+    versionSpec: '16.x'
+- script: |
+    npm install
+    npm run build --if-present
+    npm run test --if-present
+  displayName: 'npm install, build and test'
