@@ -45,7 +45,7 @@ stages:
     displayName: Deploy Job
     environment: 'sadnsadjokas'
     pool:
-      vmImage: $(vmImageName)
+      vmImage: ubuntu-latest
     strategy:
       runOnce:
         deploy:
