@@ -43,7 +43,7 @@ stages:
   jobs:
   - deployment: DeployJob
     displayName: Deploy Job
-    environment: 'myapp-build'
+    environment: 'sadnsadjokas'
     pool:
       vmImage: $(vmImageName)
     strategy:
