@@ -32,6 +32,7 @@ stages:
           archiveType: 'zip'
           archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
           replaceExistingArchive: true
+        
       - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
         artifact: drop
 
@@ -57,4 +58,4 @@ stages:
               appName: 'Node-lab2'
               package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
               runtimeStack: 'NODE|14.00'
-              startUpCommand: 'npm run start'
+              startUpCommand: 'npm start'
