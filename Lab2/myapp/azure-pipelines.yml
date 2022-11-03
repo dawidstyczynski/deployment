@@ -24,42 +24,39 @@ stages:
 - stage: Build
   displayName: Build stage
   jobs:
-  - job: Build
-    displayName: Build
-    pool:
-      vmImage: $(vmImageName)
-
-    steps:
-    - task: NodeTool@0
-      inputs:
-        versionSpec: '10.x'
-      displayName: 'Install Node.js'
-
-    - script: |
-        npm install
-        npm run build --if-present
-        npm run test --if-present
-      displayName: 'npm install, build and test'
-
-    - task: ArchiveFiles@2
-      displayName: 'Archive files'
-      inputs:
-        rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
-        includeRootFolder: false
-        archiveType: zip
-        archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-        replaceExistingArchive: true
-
-    - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-      artifact: drop
+    - job: BuildJob
+      displayName: Build Job
+      pool:
+        vmImage: ubuntu-latest
+      steps:
+      - task: NodeTool@0
+        inputs:
+          versionSource: 'spec'
+          versionSpec: '10.x'
+      - script: |
+          npm install
+          cd ./Lab2/myapp
+          npm run build --if-present
+          npm run test --if-present
+        displayName: 'npm install, build and test'
+      - task: ArchiveFiles@2
+        inputs:
+          rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+          includeRootFolder: false
+          archiveType: 'zip'
+          archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+          replaceExistingArchive: true
+        
+      - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+        artifact: drop
 
 - stage: Deploy
   displayName: Deploy stage
   dependsOn: Build
   condition: succeeded()
   jobs:
-  - deployment: Deploy
-    displayName: Deploy
+  - deployment: DeployJob
+    displayName: Deploy Job
     environment: $(environmentName)
     pool:
       vmImage: $(vmImageName)
@@ -68,11 +65,11 @@ stages:
         deploy:
           steps:
           - task: AzureWebApp@1
-            displayName: 'Azure Web App Deploy: Node-lab2'
+            displayName: 'Azure Web App Deploy'
             inputs:
               azureSubscription: $(azureSubscription)
-              appType: webAppLinux
+              appType: 'webAppLinux'
               appName: $(webAppName)
+              package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
               runtimeStack: 'NODE|10.10'
-              package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
-              startUpCommand: 'npm run start'
+              startUpCommand: 'npm start'
