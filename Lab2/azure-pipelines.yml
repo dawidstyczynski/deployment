@@ -33,8 +33,11 @@ stages:
           archiveType: 'zip'
           archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
           replaceExistingArchive: true
+
 - stage: Deploy
   displayName: Deploy stage
+  pool:
+    vmImage: ubuntu-latest
   jobs:
     - job: DeployJob
       displayName: Deploy Job
@@ -46,10 +49,10 @@ stages:
             # Write your commands here
             
             echo 'Hello world'
-      - task: AzureRmWebAppDeployment@4
+      - task: AzureWebApp@1
         inputs:
-          ConnectionType: 'AzureRM'
           azureSubscription: 'Azure für Bildungseinrichtungen: Starter(2f2ad24f-3f17-4813-8754-ec55467a51e5)'
           appType: 'webApp'
-          WebAppName: 'sadnsadjokas'
-          packageForLinux: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+          appName: 'sadnsadjokas'
+          package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
+          deploymentMethod: 'auto'
