@@ -21,9 +21,11 @@ variables:
   vmImageName: 'ubuntu-latest'
 
 stages:
+
 - stage: Build
   displayName: Build stage
   jobs:
+    
     - job: BuildJob
       displayName: Build Job
       pool:
@@ -35,6 +37,7 @@ stages:
           versionSpec: '10.x'
       - script: |
           npm install
+          echo '$(System.DefaultWorkingDirectory)'
           cd ./Lab2/myapp
           npm run build --if-present
           npm run test --if-present
@@ -46,7 +49,6 @@ stages:
           archiveType: 'zip'
           archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
           replaceExistingArchive: true
-        
       - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
         artifact: drop
 
