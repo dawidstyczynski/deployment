@@ -76,4 +76,4 @@ stages:
               appName: $(webAppName)
               runtimeStack: 'NODE|14.00'
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
-              startUpCommand: 'npm run start'
+              startUpCommand: 'npm start'
