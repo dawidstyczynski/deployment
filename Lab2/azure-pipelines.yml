@@ -18,7 +18,7 @@ stages:
       - task: NodeTool@0
         inputs:
           versionSource: 'spec'
-          versionSpec: '16.x'
+          versionSpec: '14.x'
       - script: |
           npm install
           ls '$(Build.BinariesDirectory)'
@@ -51,11 +51,11 @@ stages:
         deploy:
           steps:
           - task: AzureWebApp@1
-            displayName: 'Azure Web App Deploy: node-express-calc-build'
+            displayName: 'Azure Web App Deploy'
             inputs:
               azureSubscription: 'Azure für Bildungseinrichtungen: Starter(2f2ad24f-3f17-4813-8754-ec55467a51e5)'
               appType: 'webAppLinux'
               appName: 'sadnsadjokas'
               package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
-              runtimeStack: 'NODE|16.00'
+              runtimeStack: 'NODE|14.00'
               startUpCommand: 'npm run stack'
