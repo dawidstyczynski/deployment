@@ -33,3 +33,17 @@ stages:
           archiveType: 'zip'
           archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
           replaceExistingArchive: true
+- stage: Deploy
+  displayName: Deploy stage
+  jobs:
+    - job: DeployJob
+      displayName: Deploy Job
+      steps:
+      - task: Bash@3
+        inputs:
+          targetType: 'inline'
+          script: |
+            # Write your commands here
+            
+            echo 'Hello world'
+      
