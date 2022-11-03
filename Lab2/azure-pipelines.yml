@@ -9,7 +9,7 @@ trigger:
 variables:
 
   # Azure Resource Manager connection created during pipeline creation
-  azureSubscription: '2f2ad24f-3f17-4813-8754-ec55467a51e5'
+  azureSubscription: 'Azure für Bildungseinrichtungen: Starter(2f2ad24f-3f17-4813-8754-ec55467a51e5)'
 
   # Web app name
   webAppName: 'Node-lab2'
