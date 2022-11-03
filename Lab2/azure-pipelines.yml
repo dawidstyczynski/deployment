@@ -54,7 +54,8 @@ stages:
       - task: AzureWebApp@1
         inputs:
           azureSubscription: 'Azure für Bildungseinrichtungen: Starter(2f2ad24f-3f17-4813-8754-ec55467a51e5)'
-          appType: 'webApp'
+          appType: 'webAppLinux'
           appName: 'sadnsadjokas'
           package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
-          deploymentMethod: 'auto'
+          runtimeStack: 'NODE|16.00'
+          startUpCommand: 'npm run stack'
