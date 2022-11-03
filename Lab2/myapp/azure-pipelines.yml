@@ -36,9 +36,9 @@ stages:
           versionSource: 'spec'
           versionSpec: '10.x'
       - script: |
+          cd ./Lab2/myapp
           npm install
           echo '$(System.DefaultWorkingDirectory)'
-          cd ./Lab2/myapp
           npm run build --if-present
           npm run test --if-present
         displayName: 'npm install, build and test'
