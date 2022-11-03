@@ -6,6 +6,20 @@
 trigger:
 - master
 
+variables:
+
+  # Azure Resource Manager connection created during pipeline creation
+  azureSubscription: '2f2ad24f-3f17-4813-8754-ec55467a51e5'
+
+  # Web app name
+  webAppName: 'Node-lab2'
+
+  # Environment name
+  environmentName: 'sadnsadjokas'
+
+  # Agent VM image name
+  vmImageName: 'ubuntu-latest'
+
 stages:
 - stage: Build
   displayName: Build stage
@@ -18,7 +32,7 @@ stages:
       - task: NodeTool@0
         inputs:
           versionSource: 'spec'
-          versionSpec: '14.x'
+          versionSpec: '10.x'
       - script: |
           npm install
           cd ./Lab2/myapp
@@ -43,9 +57,9 @@ stages:
   jobs:
   - deployment: DeployJob
     displayName: Deploy Job
-    environment: 'sadnsadjokas'
+    environment: $(environmentName)
     pool:
-      vmImage: ubuntu-latest
+      vmImage: $(vmImageName)
     strategy:
       runOnce:
         deploy:
@@ -53,9 +67,9 @@ stages:
           - task: AzureWebApp@1
             displayName: 'Azure Web App Deploy'
             inputs:
-              azureSubscription: 'Azure für Bildungseinrichtungen: Starter(2f2ad24f-3f17-4813-8754-ec55467a51e5)'
+              azureSubscription: $(azureSubscription)
               appType: 'webAppLinux'
-              appName: 'Node-lab2'
+              appName: $(webAppName)
               package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
-              runtimeStack: 'NODE|14.00'
+              runtimeStack: 'NODE|10.10'
               startUpCommand: 'npm start'
