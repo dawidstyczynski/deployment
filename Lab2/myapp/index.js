@@ -1,11 +1,10 @@
 const express = require('express');
+const controller = require('./src/AppControler');
 const app = express();
 const port = 8080;
 
 
-app.get("/", (req, res) => {
-  res.send("Welcome!");
-});
+controller.map(app);
 
 
 app.listen(port, () => {
