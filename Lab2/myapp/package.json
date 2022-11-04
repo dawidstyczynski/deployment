@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "echo 'buildd'",
     "start": "node ./index.js",
-    "build": "echo 'buildd'"
+    "test": "mocha test"
   },
   "author": "",
   "license": "ISC",

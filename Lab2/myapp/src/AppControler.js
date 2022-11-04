@@ -1,3 +1,4 @@
+var stringControler = require('./StringModule')
 exports.map = function(app){
     mapHome(app);
     mapConcat(app);
@@ -11,7 +12,7 @@ function mapHome(app) {
   
 function mapConcat(app) {
     app.get("/:val1/:val2", (req, res) => {
-  
-      res.send(req.params.val1.toString() +  req.params.val2.toString());
+      value = stringControler.concat(req.params.val1,req.params.val2)
+      res.send('Concated Params: ' + value);
     });
   }
