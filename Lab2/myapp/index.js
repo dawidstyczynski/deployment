@@ -1,7 +1,7 @@
 const express = require('express')
 const controllers = require('./src/AppControler')
 const app = express()
-const port = 8080
+const port = 80
 
 controllers.map(app)
 
