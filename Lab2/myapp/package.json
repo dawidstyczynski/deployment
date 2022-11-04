@@ -6,7 +6,7 @@
   "scripts": {
     "build": "echo 'buildd'",
     "start": "node ./index.js",
-    "test": "mocha test --reporter mocha-junit-reporter"
+    "test": "mocha test"
   },
   "author": "",
   "license": "ISC",
