@@ -6,7 +6,7 @@ exports.map = function(app){
 
 function mapHome(app) {
     app.get("/", (req, res) => {
-      res.send("Welcome!");
+      res.send("elo elo!");
     });
   }
   
