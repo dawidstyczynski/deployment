@@ -1,6 +1,6 @@
 exports.map = function(app){
     mapHome(app);
-    mapConcat;
+    mapConcat(app);
 }
 
 function mapHome(app) {
