@@ -6,7 +6,7 @@ describe("Str", function () {
       it("should return the concatinated string of two values", function () {
             var input1 = 'a'
             var input2 = 'b'
-            assert.equal(stringModule.concat(input1,input2), input1 + input2 + 'c');
+            assert.equal(stringModule.concat(input1,input2), input1 + input2);
       });
     });
   });
