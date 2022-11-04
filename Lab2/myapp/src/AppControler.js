@@ -1,6 +1,5 @@
 exports.map = function(app){
-    mapHome(app),
-    mapConcat(app)
+    mapHome(app)
 }
 
 function mapHome(app) {
@@ -8,6 +7,7 @@ function mapHome(app) {
       res.send("Welcome!");
     });
   }
+  
 function mapConcat(app) {
     app.get("/:val1/:val2", (req, res) => {
   
