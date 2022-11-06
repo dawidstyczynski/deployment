@@ -1,0 +1,17 @@
+version: '1' 
+
+volumes:
+  database: 
+services:
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+       MYSQL_ROOT_PASSWORD: pwd123
+       MYSQL_DATABASE: INIT
+       MYSL_USER: user
+       MYSQL_PASSWORD: user
+    ports:
+      - '3306:3306' 
+    volumes:
+      - database:/var/lib/mysql
