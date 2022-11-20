@@ -1,0 +1,38 @@
+version: '3.9' 
+
+volumes:
+  mysql_volume:
+  wordpress_volume: 
+
+services:
+  db:
+    container_name: my_database
+    build:
+      context: .
+      dockerfile: mysql/Dockerfile
+    restart: always
+    environment:
+       MYSQL_ROOT_PASSWORD: pwd123
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: user
+       MYSQL_PASSWORD: user
+    volumes:
+      - mysql_volume:/var/lib/mysql
+
+  wordpress:
+      container_name: my_wordpress
+      depends_on:
+        - db
+      build:
+        context: .
+        dockerfile: wordpress/Dockerfile
+      ports:
+        - "8080:80"
+      restart: always
+      environment:
+        WORDPRESS_DB_HOST: db:3306
+        WORDPRESS_DB_NAME: wordpress
+        WORDPRESS_DB_USER: user
+        WORDPRESS_DB_PASSWORD: user
+      volumes:
+        - wordpress_volume:/var/www/html
