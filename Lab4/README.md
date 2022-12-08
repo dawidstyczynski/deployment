@@ -22,3 +22,20 @@
 
 ## Api adress:
 **lab4cluste-lab4-e10632-afb6e3e4.hcp.westeurope.azmk8s.io**
+
+## Images:
+
+# Cluster
+<p align="center">
+<img src="./Pictures/Cluster.png">
+</p>
+
+# Resourcengruppe
+<p align="center">
+<img src="./Pictures/Resourcengruppe.png">
+</p>
+
+# Webpage
+<p align="center">
+<img src="./Pictures/Webpage.png">
+</p>
