@@ -5,11 +5,11 @@
 - Install the kubectl with **az aks install-cli**
 - Run **az aks get-credentials --resource-group lab4 --name lab4cluster** to configure kubectl to connect to the cluster
 - Run **kubectl get nodes** to ensure you are connected to the cluster
-- Create MySQL password with **kubectl create secret generic mysql-pass --from-literal=password=test**
+- Create MySQL password with **kubectl create secret generic mysql-pass --from-literal=password=pwd123**
 - Create the files mysql-deployment.yaml and wordpress-deployment.yaml using [link](https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/)
 - Navigate to the folder, where you created mysql-deployment.yaml and wordpress-deployment.yaml
 - Run **kubectl apply -f mysql-deployment.yaml** and **kubectl apply -f wordpress-deployment.yaml**
-- Run **kubectl get service wordpress --watch** to watch get the external ip
+- Run **kubectl get service wordpress --watch** to get the external ip
 
 ## Starting the cluster: 
 **az aks start --name lab4cluster --resource-group lab4**
