@@ -1,5 +1,5 @@
 ## Steps
-- Log in to Azure with az login
+- Log in to Azure with **az login**
 - Create resource group with **az group create --name lab4 --location westeurope**
 - Create AKS cluster with **az aks create -g lab4 -n lab4cluster --node-count 1 --generate-ssh-keys**
 - Install the kubectl with **az aks install-cli**
