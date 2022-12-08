@@ -1,4 +1,4 @@
-## Steps
+# Steps
 - Log in to Azure with **az login**
 - Create resource group with **az group create --name lab4 --location westeurope**
 - Create AKS cluster with **az aks create -g lab4 -n lab4cluster --node-count 1 --generate-ssh-keys**
@@ -11,31 +11,31 @@
 - Run **kubectl apply -f mysql-deployment.yaml** and **kubectl apply -f wordpress-deployment.yaml**
 - Run **kubectl get service wordpress --watch** to get the external ip
 
-## Starting the cluster: 
+# Starting the cluster: 
 **az aks start --name lab4cluster --resource-group lab4**
 
-## Stopping the cluster: 
+# Stopping the cluster: 
 **az aks stop --name lab4cluster --resource-group lab4**
 
-## IP Adress:
+# IP Adress:
 **20.31.230.137**
 
-## Api adress:
+# Api adress:
 **lab4cluste-lab4-e10632-afb6e3e4.hcp.westeurope.azmk8s.io**
 
-## Images:
+# Images:
 
-# Cluster
+## Cluster
 <p align="center">
 <img src="./Pictures/Cluster.png">
 </p>
 
-# Resourcengruppe
+## Resourcengruppe
 <p align="center">
 <img src="./Pictures/Resourcengruppe.png">
 </p>
 
-# Webpage
+## Webpage
 <p align="center">
 <img src="./Pictures/Webpage.png">
 </p>
