@@ -11,10 +11,14 @@
 - Run **kubectl apply -f mysql-deployment.yaml** and **kubectl apply -f wordpress-deployment.yaml**
 - Run **kubectl get service wordpress --watch** to watch get the external ip
 
-## Starting  **az aks start --name lab4cluster --resource-group lab4**
+## Starting the cluster: 
+**az aks start --name lab4cluster --resource-group lab4**
 
-## Stopping: **az aks stop --name lab4cluster --resource-group lab4**
+## Stopping the cluster: 
+**az aks stop --name lab4cluster --resource-group lab4**
 
-## IP Adress: **20.31.230.137**
+## IP Adress:
+**20.31.230.137**
 
-## Api adress: **lab4cluste-lab4-e10632-afb6e3e4.hcp.westeurope.azmk8s.io**
+## Api adress:
+**lab4cluste-lab4-e10632-afb6e3e4.hcp.westeurope.azmk8s.io**
