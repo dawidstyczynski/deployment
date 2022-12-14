@@ -18,7 +18,7 @@
 **az aks stop --name lab4cluster --resource-group lab4**
 
 # IP Adress:
-**20.31.230.137**
+**20.103.64.146**
 
 # Api adress:
 **lab4cluste-lab4-e10632-afb6e3e4.hcp.westeurope.azmk8s.io**
